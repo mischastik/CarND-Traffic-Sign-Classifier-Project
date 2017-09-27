@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./writeup/signs.jpg "Images from the training dataset"
-[image2]: ./writeup/labels_histgram.png "Label distibutions."
+[image2]: ./writeup/labels_histogram.png "Label distibutions."
 [image3]: ./my-signs/12_1.png "Traffic Sign 1"
 [image4]: ./my-signs/13_1.png "Traffic Sign 1"
 [image5]: ./my-signs/14_1.png "Traffic Sign 2"
@@ -26,15 +26,15 @@ The goals / steps of this project are the following:
 [image8]: ./my-signs/36_1.png "Traffic Sign 5"
 [image9]: ./my-signs/37_1.png "Traffic Sign 6"
 
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+** Rubric Points
+*** Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
+## Writeup / README
 
 You're reading it! and here is a link to my [project code](https://github.com/mischastik/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
-###Data Set Summary & Exploration
+## Data Set Summary & Exploration
 
 Data exploration:
 
@@ -56,7 +56,7 @@ The histogram shows that the distribution of labels in the training and validati
 
 ![Label distribution][image2]
 
-###Design and Test a Model Architecture
+## Design and Test a Model Architecture
 
 Preprocessing:
 
@@ -93,11 +93,11 @@ My final model consisted of the following layers:
 | Dropout					|												|
 | Softmax				|         									|
  
-###Training
+## Training
 I chose a learning rate of 0.001, a keep probability of 85%. The variables were initialized with the Xavier initializer. Optimization was done with the Adam Optimizer on cross entropy.
 A batch size of 512 and 10 epochs turned out to be an efficent choice. 
 
-###Model improvement
+## Model Improvement
  I started with a very basic architecture close to the original LeNet. The first results were not satisfying and experimenting with hyperparamters didn't improve the results a lot.
 Then I changed the image normalization to the apporach which uses the image maximum instead of 255 which imroved the results.
 Next I added dropout layers, leaky RELUs and batch normalization which caused a decrease in performance.
@@ -109,9 +109,9 @@ Training accuracy: 0.997
 Validation accuracy: 0.967
 Test accuracy: 0.944
 
-###Test a Model on New Images
+## Test a Model on New Images
 
-The web search turned out to be tedious. After I found  only two proper images on the web, I took desperate measures: I WENT OUTSIDE. Outside I found lots of traffic signes which I recorded with my cell phone camera. 
+The web search turned out to be tedious. After I found  only two proper images on the web, I took desperate measures: **I WENT OUTSIDE**. Outside I found lots of traffic signes which I recorded with my cell phone camera. 
 
 ![sign 1][image3] ![sign 2][image4] ![sign 3][image5] 
 ![sign 4][image6] ![sign 5][image7] ![sign 6][image8]
