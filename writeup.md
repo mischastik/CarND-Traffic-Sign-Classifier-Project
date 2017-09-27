@@ -94,17 +94,17 @@ My final model consisted of the following layers:
 | Softmax				|         									|
  
 ## Training
-I chose a learning rate of 0.001, a keep probability of 85%. The variables were initialized with the Xavier initializer. Optimization was done with the Adam Optimizer on cross entropy.
+I chose a learning rate of 0.001, a keep probability for dropout of 85%. The variables were initialized with the Xavier initializer. Optimization was done with the Adam Optimizer on cross entropy.
 A batch size of 512 and 10 epochs turned out to be an efficent choice. 
 
 ## Model Improvement
- I started with a very basic architecture close to the original LeNet. The first results were not satisfying and experimenting with hyperparamters didn't improve the results a lot.
-Then I changed the image normalization to the apporach which uses the image maximum instead of 255 which imroved the results.
-Next I added dropout layers, leaky RELUs and batch normalization which caused a decrease in performance.
-I removed batch normalization which caused a huge improvement.
-The training accuracy was still significantly higher than the validation accuracy so I decided to increase the model complexity by adding another convolution layer. Another optimization of the hyperparameters led to satisfying results.
+ I started with a very basic architecture close to the original LeNet. The first results were not satisfying and experimenting with hyperparamters didn't improve the results enough.
+Then I changed the image normalization to the apporach which uses the image maximum instead of 255 which improved the results.
+Next I added dropout layers, leaky RELUs and batch normalization which caused a *decrease* in performance.
+I removed batch normalization which caused a huge improvement. Unfortunetly the reasons for this remain unclear.
+The training accuracy was still significantly higher than the validation accuracy, so I decided to increase the model complexity by adding an additional convolution layer. Another optimization of the hyperparameters led to satisfying results.
 
-My final results are:
+My current results are:
 Training accuracy: 0.997
 Validation accuracy: 0.967
 Test accuracy: 0.944
